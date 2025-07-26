@@ -1,0 +1,2 @@
+class CharacterAppearance < ApplicationRecord
+end
