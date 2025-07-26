@@ -522,6 +522,62 @@
         }
       }
     },
+    "stars": {
+      "name": "stars",
+      "comment": null,
+      "indexes": {},
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja": {
+          "name": "name_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_en": {
+          "name": "name_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    },
     "works": {
       "name": "works",
       "comment": null,
