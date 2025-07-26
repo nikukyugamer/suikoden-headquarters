@@ -1,0 +1,2 @@
+class CharactersQuote < ApplicationRecord
+end
