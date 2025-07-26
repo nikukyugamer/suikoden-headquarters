@@ -465,6 +465,116 @@
         }
       }
     },
+    "game_platforms": {
+      "name": "game_platforms",
+      "comment": null,
+      "indexes": {
+        "index_game_platforms_on_game_work_id": {
+          "name": "index_game_platforms_on_game_work_id",
+          "unique": false,
+          "columns": [
+            "game_work_id"
+          ],
+          "type": ""
+        }
+      },
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "game_work_id": {
+          "name": "game_work_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja": {
+          "name": "name_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_en": {
+          "name": "name_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja_furigana": {
+          "name": "name_ja_furigana",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "release_date_ja": {
+          "name": "release_date_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "release_date_en": {
+          "name": "release_date_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        },
+        "fk_game_platforms_game_work_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_game_platforms_game_work_id",
+          "columnNames": [
+            "game_work_id"
+          ],
+          "targetTableName": "game_works",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        }
+      }
+    },
     "game_works": {
       "name": "game_works",
       "comment": null,
