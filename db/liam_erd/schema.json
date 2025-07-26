@@ -1,0 +1,114 @@
+{
+  "tables": {
+    "works": {
+      "name": "works",
+      "comment": null,
+      "indexes": {
+        "index_works_on_name_en": {
+          "name": "index_works_on_name_en",
+          "unique": true,
+          "columns": [
+            "name_en"
+          ],
+          "type": ""
+        },
+        "index_works_on_name_ja": {
+          "name": "index_works_on_name_ja",
+          "unique": true,
+          "columns": [
+            "name_ja"
+          ],
+          "type": ""
+        },
+        "index_works_on_name_ja_furigana": {
+          "name": "index_works_on_name_ja_furigana",
+          "unique": true,
+          "columns": [
+            "name_ja_furigana"
+          ],
+          "type": ""
+        }
+      },
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja": {
+          "name": "name_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_en": {
+          "name": "name_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja_furigana": {
+          "name": "name_ja_furigana",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        },
+        "UNIQUE_name_en": {
+          "type": "UNIQUE",
+          "name": "UNIQUE_name_en",
+          "columnNames": [
+            "name_en"
+          ]
+        },
+        "UNIQUE_name_ja": {
+          "type": "UNIQUE",
+          "name": "UNIQUE_name_ja",
+          "columnNames": [
+            "name_ja"
+          ]
+        },
+        "UNIQUE_name_ja_furigana": {
+          "type": "UNIQUE",
+          "name": "UNIQUE_name_ja_furigana",
+          "columnNames": [
+            "name_ja_furigana"
+          ]
+        }
+      }
+    }
+  }
+}
