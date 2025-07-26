@@ -465,6 +465,105 @@
         }
       }
     },
+    "characters_quotes": {
+      "name": "characters_quotes",
+      "comment": null,
+      "indexes": {
+        "index_characters_quotes_on_character_id": {
+          "name": "index_characters_quotes_on_character_id",
+          "unique": false,
+          "columns": [
+            "character_id"
+          ],
+          "type": ""
+        },
+        "index_characters_quotes_on_quote_id": {
+          "name": "index_characters_quotes_on_quote_id",
+          "unique": false,
+          "columns": [
+            "quote_id"
+          ],
+          "type": ""
+        }
+      },
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "character_id": {
+          "name": "character_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "quote_id": {
+          "name": "quote_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        },
+        "fk_characters_quotes_character_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_characters_quotes_character_id",
+          "columnNames": [
+            "character_id"
+          ],
+          "targetTableName": "characters",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        },
+        "fk_characters_quotes_quote_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_characters_quotes_quote_id",
+          "columnNames": [
+            "quote_id"
+          ],
+          "targetTableName": "quotes",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        }
+      }
+    },
     "game_platforms": {
       "name": "game_platforms",
       "comment": null,

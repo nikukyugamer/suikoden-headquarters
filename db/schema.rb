@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_26_007000) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_26_008000) do
   create_table "book_works", force: :cascade do |t|
     t.integer "work_id", null: false
     t.string "name_ja", null: false
@@ -56,6 +56,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_007000) do
     t.datetime "updated_at", null: false
     t.index ["character_id"], name: "index_characters_character_nicknames_on_character_id"
     t.index ["character_nickname_id"], name: "index_characters_character_nicknames_on_character_nickname_id"
+  end
+
+  create_table "characters_quotes", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.integer "quote_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_characters_quotes_on_character_id"
+    t.index ["quote_id"], name: "index_characters_quotes_on_quote_id"
   end
 
   create_table "game_platforms", force: :cascade do |t|
@@ -112,6 +121,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_007000) do
   add_foreign_key "characters", "stars"
   add_foreign_key "characters_character_nicknames", "character_nicknames"
   add_foreign_key "characters_character_nicknames", "characters"
+  add_foreign_key "characters_quotes", "characters"
+  add_foreign_key "characters_quotes", "quotes"
   add_foreign_key "game_platforms", "game_works"
   add_foreign_key "game_works", "works"
 end
