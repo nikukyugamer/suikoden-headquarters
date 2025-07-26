@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_26_006000) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_26_007000) do
   create_table "book_works", force: :cascade do |t|
     t.integer "work_id", null: false
     t.string "name_ja", null: false
@@ -78,6 +78,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_006000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["work_id"], name: "index_game_works_on_work_id"
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.string "context_ja", null: false
+    t.string "context_en", null: false
+    t.string "scene", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stars", force: :cascade do |t|

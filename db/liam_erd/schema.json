@@ -669,6 +669,70 @@
         }
       }
     },
+    "quotes": {
+      "name": "quotes",
+      "comment": null,
+      "indexes": {},
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "context_ja": {
+          "name": "context_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "context_en": {
+          "name": "context_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "scene": {
+          "name": "scene",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    },
     "stars": {
       "name": "stars",
       "comment": null,
