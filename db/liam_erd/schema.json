@@ -201,6 +201,70 @@
         }
       }
     },
+    "character_nicknames": {
+      "name": "character_nicknames",
+      "comment": null,
+      "indexes": {},
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "nickname_ja": {
+          "name": "nickname_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "nickname_en": {
+          "name": "nickname_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "nickname_ja_furigana": {
+          "name": "nickname_ja_furigana",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    },
     "characters": {
       "name": "characters",
       "comment": null,
@@ -262,6 +326,105 @@
           "columnNames": [
             "id"
           ]
+        }
+      }
+    },
+    "characters_character_nicknames": {
+      "name": "characters_character_nicknames",
+      "comment": null,
+      "indexes": {
+        "index_characters_character_nicknames_on_character_id": {
+          "name": "index_characters_character_nicknames_on_character_id",
+          "unique": false,
+          "columns": [
+            "character_id"
+          ],
+          "type": ""
+        },
+        "index_characters_character_nicknames_on_character_nickname_id": {
+          "name": "index_characters_character_nicknames_on_character_nickname_id",
+          "unique": false,
+          "columns": [
+            "character_nickname_id"
+          ],
+          "type": ""
+        }
+      },
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "character_id": {
+          "name": "character_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "character_nickname_id": {
+          "name": "character_nickname_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        },
+        "fk_characters_character_nicknames_character_nickname_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_characters_character_nicknames_character_nickname_id",
+          "columnNames": [
+            "character_nickname_id"
+          ],
+          "targetTableName": "character_nicknames",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        },
+        "fk_characters_character_nicknames_character_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_characters_character_nicknames_character_id",
+          "columnNames": [
+            "character_id"
+          ],
+          "targetTableName": "characters",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
         }
       }
     },
