@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_26_006000) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_26_005000) do
   create_table "book_works", force: :cascade do |t|
     t.integer "work_id", null: false
     t.string "name_ja", null: false
@@ -40,11 +40,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_006000) do
   end
 
   create_table "characters", force: :cascade do |t|
+    t.integer "star_id", null: false
     t.string "name_ja", null: false
     t.string "name_en", null: false
     t.string "name_ja_furigana", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["star_id"], name: "index_characters_on_star_id", unique: true
   end
 
   create_table "characters_character_nicknames", force: :cascade do |t|
@@ -67,10 +69,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_006000) do
   end
 
   create_table "stars", force: :cascade do |t|
+    t.integer "character_id", null: false
     t.string "name_ja", null: false
     t.string "name_en", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_stars_on_character_id"
   end
 
   create_table "works", force: :cascade do |t|
@@ -87,7 +91,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_006000) do
   add_foreign_key "book_works", "works"
   add_foreign_key "character_appearances", "characters"
   add_foreign_key "character_appearances", "works"
+  add_foreign_key "characters", "stars"
   add_foreign_key "characters_character_nicknames", "character_nicknames"
   add_foreign_key "characters_character_nicknames", "characters"
   add_foreign_key "game_works", "works"
+  add_foreign_key "stars", "characters"
 end

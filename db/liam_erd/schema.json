@@ -268,11 +268,28 @@
     "characters": {
       "name": "characters",
       "comment": null,
-      "indexes": {},
+      "indexes": {
+        "index_characters_on_star_id": {
+          "name": "index_characters_on_star_id",
+          "unique": true,
+          "columns": [
+            "star_id"
+          ],
+          "type": ""
+        }
+      },
       "columns": {
         "id": {
           "name": "id",
           "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "star_id": {
+          "name": "star_id",
+          "type": "integer",
           "default": null,
           "check": null,
           "comment": null,
@@ -326,6 +343,26 @@
           "columnNames": [
             "id"
           ]
+        },
+        "UNIQUE_star_id": {
+          "type": "UNIQUE",
+          "name": "UNIQUE_star_id",
+          "columnNames": [
+            "star_id"
+          ]
+        },
+        "fk_characters_star_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_characters_star_id",
+          "columnNames": [
+            "star_id"
+          ],
+          "targetTableName": "stars",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
         }
       }
     },
@@ -525,11 +562,28 @@
     "stars": {
       "name": "stars",
       "comment": null,
-      "indexes": {},
+      "indexes": {
+        "index_stars_on_character_id": {
+          "name": "index_stars_on_character_id",
+          "unique": false,
+          "columns": [
+            "character_id"
+          ],
+          "type": ""
+        }
+      },
       "columns": {
         "id": {
           "name": "id",
           "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "character_id": {
+          "name": "character_id",
+          "type": "integer",
           "default": null,
           "check": null,
           "comment": null,
@@ -575,6 +629,19 @@
           "columnNames": [
             "id"
           ]
+        },
+        "fk_stars_character_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_stars_character_id",
+          "columnNames": [
+            "character_id"
+          ],
+          "targetTableName": "characters",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
         }
       }
     },
