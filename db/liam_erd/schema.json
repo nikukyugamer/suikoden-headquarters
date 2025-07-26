@@ -832,6 +832,105 @@
         }
       }
     },
+    "quotes_works": {
+      "name": "quotes_works",
+      "comment": null,
+      "indexes": {
+        "index_quotes_works_on_quote_id": {
+          "name": "index_quotes_works_on_quote_id",
+          "unique": false,
+          "columns": [
+            "quote_id"
+          ],
+          "type": ""
+        },
+        "index_quotes_works_on_work_id": {
+          "name": "index_quotes_works_on_work_id",
+          "unique": false,
+          "columns": [
+            "work_id"
+          ],
+          "type": ""
+        }
+      },
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "quote_id": {
+          "name": "quote_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "work_id": {
+          "name": "work_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        },
+        "fk_quotes_works_quote_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_quotes_works_quote_id",
+          "columnNames": [
+            "quote_id"
+          ],
+          "targetTableName": "quotes",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        },
+        "fk_quotes_works_work_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_quotes_works_work_id",
+          "columnNames": [
+            "work_id"
+          ],
+          "targetTableName": "works",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        }
+      }
+    },
     "stars": {
       "name": "stars",
       "comment": null,
