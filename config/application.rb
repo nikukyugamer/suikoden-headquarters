@@ -13,6 +13,9 @@ module SuikodenHeadquarters
   class Application < Rails::Application
     config.load_defaults 8.0
     config.autoload_lib(ignore: %w[assets tasks])
-    config.generators.system_tests = nil
+
+    # スキーマ試行錯誤期なのでいったんテスト生成を無効化している
+    # config.generators.system_tests = nil
+    config.generators.test_framework = nil
   end
 end
