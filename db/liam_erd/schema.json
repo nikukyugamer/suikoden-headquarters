@@ -94,6 +94,177 @@
         }
       }
     },
+    "character_appearances": {
+      "name": "character_appearances",
+      "comment": null,
+      "indexes": {
+        "index_character_appearances_on_character_id": {
+          "name": "index_character_appearances_on_character_id",
+          "unique": false,
+          "columns": [
+            "character_id"
+          ],
+          "type": ""
+        },
+        "index_character_appearances_on_work_id": {
+          "name": "index_character_appearances_on_work_id",
+          "unique": false,
+          "columns": [
+            "work_id"
+          ],
+          "type": ""
+        }
+      },
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "character_id": {
+          "name": "character_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "work_id": {
+          "name": "work_id",
+          "type": "integer",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "notes": {
+          "name": "notes",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        },
+        "fk_character_appearances_character_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_character_appearances_character_id",
+          "columnNames": [
+            "character_id"
+          ],
+          "targetTableName": "characters",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        },
+        "fk_character_appearances_work_id": {
+          "type": "FOREIGN KEY",
+          "name": "fk_character_appearances_work_id",
+          "columnNames": [
+            "work_id"
+          ],
+          "targetTableName": "works",
+          "targetColumnNames": [
+            "id"
+          ],
+          "updateConstraint": "NO_ACTION",
+          "deleteConstraint": "NO_ACTION"
+        }
+      }
+    },
+    "characters": {
+      "name": "characters",
+      "comment": null,
+      "indexes": {},
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja": {
+          "name": "name_ja",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_en": {
+          "name": "name_en",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "name_ja_furigana": {
+          "name": "name_ja_furigana",
+          "type": "varchar",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "default": null,
+          "check": null,
+          "comment": null,
+          "notNull": true
+        }
+      },
+      "constraints": {
+        "PRIMARY_id": {
+          "type": "PRIMARY KEY",
+          "name": "PRIMARY_id",
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    },
     "game_works": {
       "name": "game_works",
       "comment": null,
