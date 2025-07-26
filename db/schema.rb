@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_26_001000) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_26_001200) do
+  create_table "book_works", force: :cascade do |t|
+    t.integer "work_id", null: false
+    t.string "name_ja", null: false
+    t.string "name_en", null: false
+    t.string "name_ja_furigana", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_book_works_on_work_id"
+  end
+
+  create_table "game_works", force: :cascade do |t|
+    t.integer "work_id", null: false
+    t.string "name_ja", null: false
+    t.string "name_en", null: false
+    t.string "name_ja_furigana", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_game_works_on_work_id"
+  end
+
   create_table "works", force: :cascade do |t|
     t.string "name_ja", null: false
     t.string "name_en", null: false
@@ -21,4 +41,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_001000) do
     t.index ["name_ja"], name: "index_works_on_name_ja", unique: true
     t.index ["name_ja_furigana"], name: "index_works_on_name_ja_furigana", unique: true
   end
+
+  add_foreign_key "book_works", "works"
+  add_foreign_key "game_works", "works"
 end
