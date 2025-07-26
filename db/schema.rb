@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_26_008000) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_26_009000) do
   create_table "book_works", force: :cascade do |t|
     t.integer "work_id", null: false
     t.string "name_ja", null: false
@@ -97,6 +97,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_008000) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "quotes_works", force: :cascade do |t|
+    t.integer "quote_id", null: false
+    t.integer "work_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quote_id"], name: "index_quotes_works_on_quote_id"
+    t.index ["work_id"], name: "index_quotes_works_on_work_id"
+  end
+
   create_table "stars", force: :cascade do |t|
     t.string "name_ja", null: false
     t.string "name_en", null: false
@@ -125,4 +134,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_008000) do
   add_foreign_key "characters_quotes", "quotes"
   add_foreign_key "game_platforms", "game_works"
   add_foreign_key "game_works", "works"
+  add_foreign_key "quotes_works", "quotes"
+  add_foreign_key "quotes_works", "works"
 end
