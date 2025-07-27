@@ -6,4 +6,9 @@ namespace :liam_erd do
 
     sh "npx @liam-hq/cli erd build --format schemarb --input #{input_schema_full_path} --output-dir #{output_dir_full_path}"
   end
+
+  desc 'Liam ERD の内容を http-server を用いて提供する'
+  task serve: :environment do
+    sh 'npx http-server -c-1 db/liam_erd/'
+  end
 end
