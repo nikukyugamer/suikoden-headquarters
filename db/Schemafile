@@ -1,0 +1,6 @@
+# cf. https://blog.smartbank.co.jp/entry/2025/08/01/103000
+schema_files = Pathname(__FILE__).dirname.glob('schemata/*.schema.rb')
+
+schema_files.each do |schema|
+  require schema.to_s
+end
