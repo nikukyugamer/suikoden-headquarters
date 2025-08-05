@@ -1,7 +1,7 @@
-namespace :ridgepole do
-  CONFIG_FILE = Rails.root.join('config/database.yml')
-  SCHEMA_FILE = Rails.root.join('db/Schemafile')
+CONFIG_FILE = Rails.root.join('config/database.yml')
+SCHEMA_FILE = Rails.root.join('db/Schemafile')
 
+namespace :ridgepole do
   desc 'bin/rails db:migrate:reset 相当'
   task migrate_reset: :environment do
     sh "bundle exec ridgepole --config #{CONFIG_FILE} --file #{SCHEMA_FILE} --apply --drop-table"
