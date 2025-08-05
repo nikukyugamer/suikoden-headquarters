@@ -18,6 +18,10 @@ group :development, :test do
   gem 'rubocop-rbs_inline' # RBS::Inline の記述ミスを検知する (https://www.timedia.co.jp/tech/20241024-tech/)
   gem 'steep', require: false # 型チェックをする
 
+  # RSpec
+  gem 'factory_bot_rails', require: false
+  gem 'rspec-rails', require: false
+
   # RuboCop
   gem 'rubocop-factory_bot', require: false
   gem 'rubocop-performance', require: false
