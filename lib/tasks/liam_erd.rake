@@ -10,7 +10,8 @@ namespace :liam_erd do
 
     sh "npx @liam-hq/cli erd build --format schemarb --input #{input_schema_full_path} --output-dir #{output_dir_full_path}"
 
-    File.rm(input_schema_full_path)
+    # この程度ならデバッグ用に残す必要はないと思うので消す
+    File.delete(input_schema_full_path)
   end
 
   desc 'Liam ERD の内容を http-server を用いて提供する'
