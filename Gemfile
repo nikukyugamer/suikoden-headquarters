@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'activerecord-originator' # https://pocke.hatenablog.com/entry/2024/03/13/223008
-gem 'propshaft'
+gem 'propshaft' # Sprockets の代替
 gem 'puma'
 gem 'rails'
 gem 'sqlite3'
+
+group :development do
+  gem 'activerecord-originator' # https://pocke.hatenablog.com/entry/2024/03/13/223008
+end
 
 group :development, :test do
   gem 'debug', require: 'debug/prelude'
