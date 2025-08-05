@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'propshaft' # Sprockets の代替
 gem 'puma'
 gem 'rails'
+gem 'ridgepole'
 gem 'sqlite3'
 
 group :development do
