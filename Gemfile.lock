@@ -237,9 +237,9 @@ GEM
     regexp_parser (2.11.3)
     reline (0.6.3)
       io-console (~> 0.5)
-    repl_type_completor (0.1.12)
+    repl_type_completor (0.1.16)
       prism (~> 1.0)
-      rbs (>= 2.7.0, < 4.0.0)
+      rbs (>= 2.7.0)
     ridgepole (3.1.2)
       activerecord (>= 6.1, < 8.2)
       diffy
